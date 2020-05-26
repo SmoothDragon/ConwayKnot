@@ -15,7 +15,8 @@ r = .35
 knot = json.load(open('conwayKnot.json'))
 # print(knot)
 # print(dir(solid))
-ball = solid.sphere(r)
+ball = solid.sphere(r, segments=6)
+ball = solid.rotate([0, 0, 30])(ball)
 
 points = [[*eisenstein(*point[:2]), point[2]] for point in knot['path']]
 # print(points)
